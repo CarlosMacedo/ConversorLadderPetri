@@ -1,0 +1,88 @@
+      <trans id=
+<!-- trans : trans id | STRING -->
+             explicit="false">
+        <posattr x=
+<!-- posattr : trans position x | STRING -->
+                 y=
+<!-- posattr : trans position y | STRING -->
+                 />
+        <fillattr colour="White"
+                  pattern=""
+                  filled="false"/>
+        <lineattr colour="Black"
+                  thick="1"
+                  type="solid"/>
+        <textattr colour="Black"
+                  bold="false"/>
+        <text>
+<!-- text : name of the trans | STRING -->
+        </text>
+        <box w="100.000000"
+             h="35.000000"/>
+        <binding x="7.200000"
+                 y="-3.000000"/>
+        <cond id=
+<!-- cond : cond id | STRING -->
+        >
+          <posattr x="-16.000000"
+                   y="165.000000"/>
+          <fillattr colour="White"
+                    pattern="Solid"
+                    filled="false"/>
+          <lineattr colour="Black"
+                    thick="0"
+                    type="Solid"/>
+          <textattr colour="Black"
+                    bold="false"/>
+          <text tool="CPN Tools"
+                version="4.0.1"/>
+        </cond>
+        <time id=
+<!-- time : time id | STRING -->
+        >
+          <posattr x="105.500000"
+                   y="165.000000"/>
+          <fillattr colour="White"
+                    pattern="Solid"
+                    filled="false"/>
+          <lineattr colour="Black"
+                    thick="0"
+                    type="Solid"/>
+          <textattr colour="Black"
+                    bold="false"/>
+          <text tool="CPN Tools"
+                version="4.0.1"/>
+        </time>
+        <code id=
+<!-- code : code id | STRING -->
+        >
+          <posattr x="125.500000"
+                   y="88.000000"/>
+          <fillattr colour="White"
+                    pattern="Solid"
+                    filled="false"/>
+          <lineattr colour="Black"
+                    thick="0"
+                    type="Solid"/>
+          <textattr colour="Black"
+                    bold="false"/>
+          <text tool="CPN Tools"
+                version="4.0.1"/>
+        </code>
+        <priority id=
+<!-- priority : priority id | STRING -->
+        >
+          <posattr x="-45.000000"
+                   y="109.000000"/>
+          <fillattr colour="White"
+                    pattern="Solid"
+                    filled="false"/>
+          <lineattr colour="Black"
+                    thick="0"
+                    type="Solid"/>
+          <textattr colour="Black"
+                    bold="false"/>
+          <text tool="CPN Tools"
+                version="4.0.1"/>
+        </priority>
+      </trans>

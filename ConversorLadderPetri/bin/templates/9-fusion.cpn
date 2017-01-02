@@ -1,0 +1,7 @@
+    <fusion id=
+<!-- fusion : fusion id | STRING -->
+            name=
+<!-- fusion : fusion name | STRING -->
+            >
+<!-- fusion : how many ref of the fusion | STRING -->
+    </fusion>

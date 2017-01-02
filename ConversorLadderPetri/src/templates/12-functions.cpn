@@ -1,0 +1,8 @@
+		<ml id=
+<!-- ml : ml id | STRING -->
+		>
+<!-- fun : fun formula(a,b,c) = a orelse b orelse c; | STRING -->
+          <layout>
+<!-- fun : fun formula(a,b,c) = a orelse b orelse c; | STRING -->
+          </layout>
+        </ml>

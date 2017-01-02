@@ -1,0 +1,74 @@
+      <block id="IDLD0001">
+        <id>Standard declarations</id>
+<!-- function: insert n function? | STRING -->
+        <color id="IDLD85042">
+          <id>UNIT</id>
+          <unit/>
+          <layout>colset UNIT = unit;</layout>
+        </color>
+        <color id="IDLD0004">
+          <id>BOOL</id>
+          <bool/>
+        </color>
+        <color id="IDLD0003">
+          <id>INT</id>
+          <int/>
+        </color>
+        <color id="IDLD0001412312409">
+          <id>INTINF</id>
+          <intinf/>
+          <layout>colset INTINF = intinf;</layout>
+        </color>
+        <color id="IDLD0001412312425">
+          <id>TIME</id>
+          <time/>
+          <layout>colset TIME = time;</layout>
+        </color>
+        <color id="IDLD0001412322990">
+          <id>REAL</id>
+          <real/>
+          <layout>colset REAL = real;</layout>
+        </color>
+        <color id="IDLD0005">
+          <id>STRING</id>
+          <string/>
+        </color>
+        <color id="IDLD0001412358336">
+          <id>INPUTS</id>
+<!-- choice: insert product ou alias | INPUT -->
+<!-- id: how many BOOL in product | INPUT -->
+<!-- choice: insert /product ou /alias | INPUT-->
+<!-- layout: product expression | INPUT -->
+        </color>
+        <color id="IDLD0001412367356">
+          <id>OUTPUTS</id>
+<!-- choice: insert product ou alias | OUTPUTS -->
+<!-- id: how many BOOL in product | OUTPUTS -->
+<!-- choice: insert /product ou /alias | OUTPUTS-->
+<!-- layout: product expression | OUTPUTS -->
+        </color>
+        <var id="IDLD0001412368369">
+          <type>
+            <id>INPUTS</id>
+          </type>
+          <id>tupleIn</id>
+          <id>newTupleIn</id>
+          <layout>var tupleIn, newTupleIn : INPUTS;</layout>
+        </var>
+        <var id="IDLD0001412385911">
+          <type>
+            <id>BOOL</id>
+          </type>
+<!-- id: how many var BOOL in product | OUTPUTS -->
+<!-- layout: var expression | OUTPUTS -->
+        </var>
+        <var id="IDLD0001412438287">
+          <type>
+            <id>OUTPUTS</id>
+          </type>
+          <id>newTupleOut</id>
+          <id>tupleOut</id>
+          <layout>var newTupleOut, tupleOut : OUTPUTS;</layout>
+        </var>
+      </block>
+    </globbox>
