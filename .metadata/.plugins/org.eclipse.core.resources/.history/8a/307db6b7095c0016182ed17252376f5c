@@ -1,0 +1,50 @@
+package main;
+
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.ArrayDeque;
+
+public class FileManipulator {
+
+	public static void readLadder(String path) throws IOException {
+		BufferedReader buffRead = new BufferedReader(new FileReader(path));
+		String[] word; 
+		
+		
+		/*control variables*/
+		boolean beginIOList = false;
+		boolean endIOList = false;
+		boolean beginRung = false;
+		boolean endRung = false;
+		boolean beginParallel = false;
+		boolean endParallel = false;
+		ArrayDeque<String> stack = new ArrayDeque<String>();
+		
+		String line = buffRead.readLine();
+		while (line != null) {
+			System.out.println(line);			
+			if (line.equals("IO LIST")) { ioList = true;}
+			else if (line.equals("END")) {ioList = false;}
+			
+			/*palavra = linha.split(" ");
+				for (int i = 0; i < palavra.length; i++) {
+					System.out.println(":" + palavra[i]);
+				}*/
+			line = buffRead.readLine();
+		}
+		buffRead.close();
+	}
+
+	public static void writeLadder(String path) throws IOException {
+		BufferedWriter buffWrite = new BufferedWriter(new FileWriter(path));
+		String line = "";
+
+		line = "Entrada";
+		buffWrite.append(line + "\n");
+		buffWrite.close();
+	}
+
+}

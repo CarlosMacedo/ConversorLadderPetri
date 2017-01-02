@@ -1,0 +1,69 @@
+package main;
+
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+
+public class FileManipulator {
+
+	public static void readLadder(String path) throws IOException {
+		BufferedReader buffRead = new BufferedReader(new FileReader(path));
+		String[] word; 
+				
+		/*control variables*/
+		boolean ioList = false;
+		boolean rung = false;
+		boolean parallel = false;
+		
+		String line = "";
+		while (line != null) {	
+			
+			
+			/**/
+			if (ioList){
+				System.out.println(line);
+				System.out.println(" :Está dentro do List ");
+			} else if (rung && parallel) {
+				System.out.println(line);
+				System.out.println(" :Está dentro do parallel ");
+			} else if (rung) {
+				System.out.println(line);
+				System.out.println(" :Está dentro do rung ");
+			}
+			
+			/*palavra = linha.split(" ");
+				for (int i = 0; i < palavra.length; i++) {
+					System.out.println(":" + palavra[i]);
+				}*/
+			line = buffRead.readLine();
+			
+			/*Control*/
+			if (line.equals("IO LIST")) {	
+				ioList = true;
+			} else if (line.equals("END") && ioList) {
+				ioList = false;
+			} else if (line.equals("    PARALLEL")) {
+				parallel = true;
+			} else if (line.equals("END") && parallel) {
+				parallel = false;
+			} else if (line.equals("RUNG")) {
+				rung = true;
+			} else if (line.equals("END") && rung) {
+				rung = false;
+			}
+		}
+		buffRead.close();
+	}
+
+	public static void writeLadder(String path) throws IOException {
+		BufferedWriter buffWrite = new BufferedWriter(new FileWriter(path));
+		String line = "";
+
+		line = "Entrada";
+		buffWrite.append(line + "\n");
+		buffWrite.close();
+	}
+
+}

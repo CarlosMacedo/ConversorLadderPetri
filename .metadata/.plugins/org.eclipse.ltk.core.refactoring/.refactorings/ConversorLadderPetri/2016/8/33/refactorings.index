@@ -1,0 +1,12 @@
+1470835056520	Rename type 'FileManipulator'
+1470835259025	Rename type 'FileHandlerLadder'
+1470835424772	Rename type 'Place'
+1470860205677	Move compilation unit
+1470864511936	Encapsulate field 'qntID'
+1470877255582	Rename type 'Declarations'
+1470884529235	Rename type 'Fusion'
+1470920062140	Extract local variable 'integer'
+1470945106282	Rename method 'addArc'
+1470945120853	Rename method 'addFusion'
+1470945134299	Rename method 'addPlace'
+1470945152216	Rename method 'declarations'

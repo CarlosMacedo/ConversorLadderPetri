@@ -1,0 +1,15 @@
+package main;
+
+import java.io.IOException;
+
+
+public class Main {
+	public static void main(String[] args) throws IOException {
+		String path = "C:\\Users\\Carlos\\Dropbox\\UFAL\\TCC\\Examples\\ladder\\";
+		String url = "C:\\Users\\Carlos\\Dropbox\\UFAL\\TCC\\Examples\\out\\out.cpn";
+		String file = "fig0.ld";
+		
+		ManipulatorLadder fml = new ManipulatorLadder();
+		fml.ladderToPetri(path+file, url);
+	}
+}

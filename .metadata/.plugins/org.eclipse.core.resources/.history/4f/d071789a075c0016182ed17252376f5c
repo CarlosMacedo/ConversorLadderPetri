@@ -1,0 +1,12 @@
+package main;
+
+import java.io.IOException;
+
+public class Main {
+	public static void main(String[] args) throws IOException {
+		String path = "C:\\Users\\Carlos\\Dropbox\\UFAL\\TCC\\Code\\ConversorLadderPetri\\src\\out\\";
+		String file = "teste.ld";
+		
+		FileManipulator.readLadder(path + arq);
+	}
+}
