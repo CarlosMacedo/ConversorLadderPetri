@@ -2,12 +2,13 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="C:\" key="selection"/>
+		<item value="orelse" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="orelse"/>
 			<item value="C:\"/>
 			<item value="new"/>
 			<item value="Models"/>
@@ -15,7 +16,6 @@
 			<item value="out"/>
 			<item value="pathModels"/>
 			<item value="100"/>
-			<item value="fusionName"/>
 		</list>
 		<list key="replacehistory">
 		</list>

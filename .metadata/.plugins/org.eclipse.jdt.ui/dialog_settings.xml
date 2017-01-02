@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
+	<item value="false" key="TypeHierarchyViewPart.qualifiednames"/>
+	<item value="3" key="TypeHierarchyViewPart.orientation"/>
+	<item value="false" key="TypeHierarchyViewPart.linkeditors"/>
+	<item value="2" key="TypeHierarchyViewPart.hierarchyview"/>
 	<item value="false" key="delegateUpdating"/>
 	<section name="org.eclipse.ltk.ui.refactoring.settings">
 		<item value="false" key="updateQualifiedNames"/>
@@ -36,7 +40,7 @@
 	<section name="javadoc">
 		<item value="public" key="access"/>
 		<item value="false" key="noindex"/>
-		<item value="C:\Users\carlo\Dropbox\UFAL\TCC\Code\ConversorLadderPetri\javadoc.xml" key="antpath"/>
+		<item value="C:\Users\carlo\Documents\GitHub\ConversorLadderPetri\ConversorLadderPetri\javadoc.xml" key="antpath"/>
 		<item value="false" key="nodeprecatedlist"/>
 		<item value="true" key="use"/>
 		<item value="true" key="author"/>
@@ -50,9 +54,19 @@
 		<item value="true" key="splitindex"/>
 		<item value="true" key="fromStandard"/>
 		<item value="false" key="notree"/>
-		<item value="C:\Users\carlo\Dropbox\UFAL\TCC\Code\ConversorLadderPetri\doc" key="destdir"/>
+		<item value="C:\Users\carlo\Documents\GitHub\ConversorLadderPetri\ConversorLadderPetri\doc" key="destdir"/>
 		<item value="false" key="openinbrowser"/>
 		<section name="projects">
+			<section name="ConversorLadderPetri">
+				<item value="C:\Users\carlo\Documents\GitHub\ConversorLadderPetri\ConversorLadderPetri\javadoc.xml" key="antpath"/>
+				<item value="C:\Users\carlo\Documents\GitHub\ConversorLadderPetri\ConversorLadderPetri\doc" key="destdir"/>
+				<item value="" key="href"/>
+			</section>
+			<section name="RemoteSystemsTempFiles">
+				<item value="C:\Users\carlo\Documents\GitHub\ConversorLadderPetri\RemoteSystemsTempFiles\javadoc.xml" key="antpath"/>
+				<item value="C:\Users\carlo\Documents\GitHub\ConversorLadderPetri\RemoteSystemsTempFiles\doc" key="destdir"/>
+				<item value="" key="href"/>
+			</section>
 		</section>
 	</section>
 	<section name="SourceActionDialog.methods">
