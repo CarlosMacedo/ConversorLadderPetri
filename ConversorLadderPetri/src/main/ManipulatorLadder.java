@@ -5,11 +5,18 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 
+/**
+ * Read and extract information from the .ld file.
+ * 
+ * @author Carlos Macedo
+ */
+
 public class ManipulatorLadder {	
 	/**
-	 * Ler o arquivo ladder e extrai todas informações.
-	 * @param path local do arquivo.
-	 * @throws IOException
+	 * Read the ladder file and extract all information.
+	 * @param path .ld File location.
+	 * @param url .cpn File location.
+	 * @throws IOException Error reading file.
 	 */
 	public void ladderToPetri(String path, String url) throws IOException {
 		BufferedReader buffRead = new BufferedReader(new FileReader(path));
@@ -118,7 +125,14 @@ public class ManipulatorLadder {
 			wp.writePetri(url);
 		}			
 	}
-
+	/**
+	 * Creates the function of each step.
+	 * 
+	 * @param functions functions from each step. 
+	 * @param inputs Each step contact
+	 * @param formula The Boolean equation of the step
+	 * @return the function 
+	 */
 	private String creatAndAddFunction(ArrayList<String> functions, ArrayList<String> inputs, String formula) {
 		String result = "fun formula" + (functions.size()+1) +"(";
 		for (int i = 0; i < inputs.size(); i++) {
@@ -130,6 +144,12 @@ public class ManipulatorLadder {
 		return result;
 	}
 
+	/**
+	 * Create a Boolean equation of the step
+	 * @param formula The Boolean equation current
+	 * @param funParallel What to add the formula
+	 * @return equation
+	 */
 	private String insertFormula(String formula, String funParallel) {
 		String result;
 		

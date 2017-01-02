@@ -7,11 +7,21 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
 
+/**
+ * Responsible for writing Declarations in CPNTools
+ * 
+ * @author Carlos Macedo
+ */
 public class Declaration {
 	private ArrayList<String> inputs;
 	private ArrayList<String> outputs;
 	private ArrayList<String> functions;
 	
+	/**
+	 * @param inputs All countacts from the ld file.
+	 * @param outputs All reels from the ld file.
+	 * @param functions All functions from the ld file.
+	 */
 	public Declaration(ArrayList<String> inputs, ArrayList<String> outputs, ArrayList<String> functions) {
 		this.inputs = inputs;
 		this.outputs = outputs;
@@ -19,10 +29,10 @@ public class Declaration {
 	}
 	
 	/**
-	 * Declara todo tipo de váriavel que será utilizada.
-	 * @param path Caminho do arquivo a ser copiado
-	 * @param buffWrite Buffer do arquivo para escrever
-	 * @throws IOException
+	 * Declares all kinds of variables that will be used.
+	 * @param path Absolute path of the .cpn file.
+	 * @param buffWrite It is used to write to the file.
+	 * @throws IOException Error reading file.
 	 */
 	public void writerDeclarations(String path, BufferedWriter buffWrite) throws IOException{
 		BufferedReader buffDeclarations = new BufferedReader(new FileReader(path));

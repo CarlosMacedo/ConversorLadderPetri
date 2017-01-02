@@ -8,15 +8,30 @@ import java.util.ArrayList;
 
 import main.WriterPetri;
 
+/**
+ * Responsible for writing FusionOutside in CPNTools
+ * 
+ * @author Carlos Macedo
+ */
+
 public class FusionOutside {
 	private String name;
 	private ArrayList<Integer> idref;
 
+	/**
+	 * @param name Name of the place where the merger belongs
+	 * @param idref Ref of the place where the merger belongs
+	 */
 	public FusionOutside(String name, ArrayList<Integer> idref) {
 		this.name = name;
 		this.idref = idref;
 	}
 	
+	/**
+	 * @param path Absolute path of the .cpn file.
+	 * @param buffWrite It is used to write to the file.
+	 * @throws IOException Error reading file.
+	 */
 	public void writerArc(String path, BufferedWriter buffWrite) throws IOException{
 		BufferedReader buffFusion = new BufferedReader(new FileReader(path));
 		String line = buffFusion.readLine();

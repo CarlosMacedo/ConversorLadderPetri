@@ -8,6 +8,12 @@ import java.net.URL;
 
 import main.WriterPetri;
 
+/**
+ * Responsible for writing Place in CPNTools
+ * 
+ * @author Carlos Macedo
+ */
+
 public class Place {
 	private int id;
 	private float x;
@@ -18,7 +24,15 @@ public class Place {
 	private String fusionName;
 	
 
-
+	/**
+	 * @param id Place id
+	 * @param positionx Coordinate of the Cartesian plane, which should remain.
+	 * @param postiony Coordinate of the Cartesian plane, which should remain.
+	 * @param name Place name
+	 * @param type Place type
+	 * @param color Place color type
+	 * @param fusionName Contain or not fusion
+	 */
 	public Place(int id, float positionx, float postiony, String name,
 			String type, String color, String fusionName) {
 		this.id = id;
@@ -30,7 +44,11 @@ public class Place {
 		this.fusionName = fusionName;
 	}
 	
-	
+	/**
+	 * @param path Absolute path of the .cpn file.
+	 * @param buffWrite It is used to write to the file.
+	 * @throws IOException Error reading file.
+	 */
 	public void writerPlace(String path, BufferedWriter buffWrite) throws IOException{
 		BufferedReader buffPlace = new BufferedReader(new FileReader(path));
 		String line = buffPlace.readLine();

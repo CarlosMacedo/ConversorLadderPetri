@@ -13,7 +13,12 @@ import models.Declaration;
 import models.FusionOutside;
 import models.Place;
 import models.Transition;
- 
+
+/**
+ * Writes every .cpn file. Using data obtained from .ld and .cpn models.
+ * 
+ * @author Carlos Macedo
+ */
 public class WriterPetri {
 	private ArrayList<String> inputs;
 	private ArrayList<String> outputs;
@@ -27,6 +32,15 @@ public class WriterPetri {
 	private static final int y0 = 140;
 	private static final int space = 250;
 	
+	/**
+	 * Constructor 
+	 * 
+	 * Requires all information from the .ld file.
+	 * 
+	 * @param inputs All countacts from the ld file.
+	 * @param outputs All reels from the ld file.
+	 * @param functions All functions from the ld file.
+	 */
 	public WriterPetri(ArrayList<String> inputs, ArrayList<String> outputs, ArrayList<String> functions) {
 		this.inputs = inputs;
 		this.outputs = outputs;
@@ -37,10 +51,11 @@ public class WriterPetri {
 	}
 	
 	/**
-	 * Função principal. Cria o xml.
-	 * @param inputs Array com os nomes dos inputs do ladder.
-	 * @param outputs Array com os nomes dos outputs do ladder.
-	 * @throws IOException
+	 * Main Function. Create the xml for CPNTools .
+	 * 
+	 * @param inputs All countacts from the ld file.
+	 * @param outputs All reels from the ld file.
+	 * @throws IOException Error reading file.
 	 */
 	public void writePetri(String url) throws IOException {
 		URL resource = Arc.class.getResource("/templates/");
@@ -74,13 +89,22 @@ public class WriterPetri {
 
 
 	
-	
+	/**
+	 * Write arcs in cpn file.
+	 * 
+	 * @param path Absolute path of the .cpn file.
+	 * @param buffWrite It is used to write to the file.
+	 * @throws IOException Error reading file.
+	 */
 	private void writerArcs(String path, BufferedWriter buffWrite) throws IOException {
 		for (int i = 0; i < arcs.size(); i++) {
 			arcs.get(i).writerArc(path, buffWrite);
 		}
 	}
 	
+	/**
+	 * Create a arc.
+	 */
 	private void createArcs() {			
 		arcs.add(new Arc("PtoT", idTrans("ReadInputs", 0), idPlace("Start", 0), ""));
 		arcs.add(new Arc("PtoT", idTrans("ReadInputs", 0), idPlace("In", 0), "tupleIn"));	
@@ -104,6 +128,12 @@ public class WriterPetri {
 		}
 	}
 	
+	/**
+	 * Write the formula compatible with CPNTools.
+	 *  
+	 * @param displacement Lists the functions. Creating func1, func2 ...
+	 * @return Returns function compatible with CPNTools
+	 */
 	private String formula(int displacement) { ///
 		if (outputs.size() == 1) return "formula"+displacement+"(tupleIn)";
 		
@@ -117,6 +147,12 @@ public class WriterPetri {
 		return result;
 	}
 
+	/**
+	 * Write the Transition compatible with CPNTools.
+	 * @param name name of trasition
+	 * @param displacement Transition step
+	 * @return transition or null
+	 */
 	private Transition idTrans(String name, int displacement){
 		for (int i = 0; i < transitions.size(); i++) {
 			if (transitions.get(i).getName().equals(name)){
@@ -129,6 +165,13 @@ public class WriterPetri {
 		return null;
 	} 
 	
+	/**
+	 * Returns the id of any place.
+	 * 
+	 * @param name name of place
+	 * @param displacement Place number
+	 * @return id place
+	 */
 	private Place idPlace(String name, int displacement){
 		for (int i = 0; i < places.size(); i++) {
 			if (places.get(i).getName().equals(name)){
@@ -141,12 +184,21 @@ public class WriterPetri {
 		return null;
 	} 
 
+	/**
+	 * Write the Transition in cpn file.
+	 * @param path  Absolute path of the .cpn file.
+	 * @param buffWrite It is used to write to the file.
+	 * @throws IOException Error reading file.
+	 */
 	private void writerTrans(String path, BufferedWriter buffWrite) throws IOException {
 		for (int i = 0; i < transitions.size(); i++) {
 			transitions.get(i).writerTrans(path, buffWrite);
 		}
 	}
 	
+	/**
+	 * Write the Transition in cpn file.
+	 */
 	private void createTrans() {
 		transitions.add(new Transition(WriterPetri.increaseId(), x0+space, y0, "ReadInputs"));
 		transitions.add(new Transition(WriterPetri.increaseId(), x0, -1*space*outputs.size(), "Release"));
@@ -156,12 +208,21 @@ public class WriterPetri {
 		}
 	}
 
+	/**
+	 * Write the Place in cpn file.
+	 * @param path Absolute path of the .cpn file.
+	 * @param buffWrite It is used to write to the file.
+	 * @throws IOException Error reading file.
+	 */
 	private void writerPlaces(String path, BufferedWriter buffWrite) throws IOException {
 		for (int i = 0; i < places.size(); i++) {
 			places.get(i).writerPlace(path, buffWrite);
 		}
 	}
 	
+	/**
+	 * Creates all the necessary places.
+	 */
 	private void createPlaces() {
 		places.add(new Place(WriterPetri.increaseId(), x0, y0, "Start", "UNIT", "1`()", ""));
 		places.add(new Place(WriterPetri.increaseId(), x0+space, -1*space*outputs.size(), "Done", "UNIT", "", ""));
@@ -175,6 +236,12 @@ public class WriterPetri {
 		}
 	}
 	
+	/**
+	 * Creates all necessary fusions.
+	 * @param path Absolute path of the .cpn file.
+	 * @param buffWrite It is used to write to the file.
+	 * @throws IOException Error reading file.
+	 */
 	private void createFusions(String path, BufferedWriter buffWrite) throws IOException {
 		ArrayList<Integer> idref = new ArrayList<Integer>();
 		
@@ -190,11 +257,21 @@ public class WriterPetri {
 		}
 	}
 
+	/**
+	 * Creates all necessary declarations.
+	 * @param path Absolute path of the .cpn file.
+	 * @param buffWrite It is used to write to the file.
+	 * @throws IOException Error reading file.
+	 */
 	private void writerDeclarations(String path, BufferedWriter buffWrite) throws IOException {
 		Declaration decl = new Declaration(this.inputs, this.outputs, this.functions);
 		decl.writerDeclarations(path, buffWrite);
 	}
-
+ 
+	/**
+	 * Creates the colors of the IN states
+	 * @return color
+	 */
 	private String colorIn() {
 		if (inputs.size() == 1) return "false";
 		
@@ -207,6 +284,10 @@ public class WriterPetri {
 		return result;
 	}
 	
+	/**
+	 * Creates the colors of the OUT states
+	 * @return color
+	 */
 	private String colorOut() {
 		if (outputs.size() == 1) return "false";
 		
@@ -219,6 +300,10 @@ public class WriterPetri {
 		return result;
 	}
 	
+	/**
+	 * Creates the colors of the OUT variables
+	 * @return color
+	 */
 	private String colorOutVar() {
 		if (outputs.size() == 1) return "out1";
 		
@@ -232,11 +317,11 @@ public class WriterPetri {
 	}
 
 	/**
-	 * Copia e cola um arquivo para o outro.
+	 * Copy and paste one file to another.
 	 * 
-	 * @param path Caminho do arquivo a ser copiado
-	 * @param buffWrite Buffer do arquivo para escrever
-	 * @throws IOException 
+	 * @param path Absolute path of the .cpn file.
+	 * @param buffWrite It is used to write to the file.
+	 * @throws IOException Error reading file.
 	 */	
 	private void copyAndPast(String path, BufferedWriter buffWrite) throws IOException{
 		BufferedReader header = new BufferedReader(new FileReader(path));
@@ -248,10 +333,18 @@ public class WriterPetri {
 		header.close();
 	}
 	
+	/**
+	 * They keep the id place unique, increased.
+	 * @return id
+	 */
 	public static int increaseId() {
 		return WriterPetri.qntID++;
 	}
 	
+	/**
+	 * They keep the id fusion unique, increased.
+	 * @return id
+	 */
 	public static int increaseFusion() {
 		return WriterPetri.fusionID++;
 	}

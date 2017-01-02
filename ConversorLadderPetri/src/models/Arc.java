@@ -7,19 +7,36 @@ import java.io.IOException;
 
 import main.WriterPetri;
 
+/**
+ * Responsible for writing arch in CPNTools
+ * 
+ * @author Carlos Macedo
+ */
+
 public class Arc {
 	private String orientation;
 	private Transition idTrans;
 	private Place idPlace;
 	private String color;
 	
+	/**
+	 * 
+	 * @param orientation left or right
+	 * @param idTrans  Trans id
+	 * @param idPlace Place id
+	 * @param color Arc color
+	 */
 	public Arc(String orientation, Transition idTrans, Place idPlace, String color) {
 		this.orientation = orientation;
 		this.idTrans = idTrans;
 		this.idPlace = idPlace;
 		this.color = color;
 	}
-
+	/**
+	 * @param path Absolute path of the .cpn file.
+	 * @param buffWrite It is used to write to the file.
+	 * @throws IOException Error reading file.
+	 */
 	public void writerArc(String path, BufferedWriter buffWrite) throws IOException{
 		BufferedReader buffArc = new BufferedReader(new FileReader(path));
 		String line = buffArc.readLine();

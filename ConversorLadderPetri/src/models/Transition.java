@@ -7,12 +7,25 @@ import java.io.IOException;
 
 import main.WriterPetri;
 
+/**
+ * Responsible for writing Transition in CPNTools
+ * 
+ * @author Carlos Macedo
+ */
+
 public class Transition {
 	private int id;
 	private float x;
 	private float y;
 	private String name;
 	
+	/**
+	 * 
+	 * @param id Trans id
+	 * @param x Coordinate of the Cartesian plane, which should remain.
+	 * @param y Coordinate of the Cartesian plane, which should remain.
+	 * @param name Trans Name
+	 */
 	public Transition(int id, float x, float y, String name) {
 		this.id = id;
 		this.x = x;
@@ -20,6 +33,11 @@ public class Transition {
 		this.name = name;
 	}
 
+	/**
+	 * @param path Absolute path of the .cpn file.
+	 * @param buffWrite It is used to write to the file.
+	 * @throws IOException Error reading file.
+	 */
 	public void writerTrans(String path, BufferedWriter buffWrite) throws IOException{
 		BufferedReader buffTrans = new BufferedReader(new FileReader(path));
 		String line = buffTrans.readLine();
