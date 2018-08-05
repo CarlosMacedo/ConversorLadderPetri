@@ -1,6 +1,6 @@
 ﻿# Conversor Ladder to Petri (LtP)
 
-Complete work here: https://github.com/CarlosMacedo/ConversorLadderPetri/blob/master/TCC___13111986.pdf
+Full explanation here: https://github.com/CarlosMacedo/ConversorLadderPetri/blob/master/TCC___13111986.pdf
 
 LtP is a converter that transforms Ladder Diagrams (LD) into Colored Petri Net (RPC).
 However, LtP is restricted to the basic elements of the LD, that is, it only accepts LD files that
