@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Rename type &apos;main.FileManipulatorLadder&apos; to &apos;ManipulatorLadder&apos;&#x0D;&#x0A;- Original project: &apos;ConversorLadderPetri&apos;&#x0D;&#x0A;- Original element: &apos;main.FileManipulatorLadder&apos;&#x0D;&#x0A;- Renamed element: &apos;main.ManipulatorLadder&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;FileManipulatorLadder&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;main{FileManipulatorLadder.java[FileManipulatorLadder" matchStrategy="1" name="ManipulatorLadder" qualified="false" references="true" similarDeclarations="false" stamp="1471300358491" textual="false" version="1.0"/>
-</session>

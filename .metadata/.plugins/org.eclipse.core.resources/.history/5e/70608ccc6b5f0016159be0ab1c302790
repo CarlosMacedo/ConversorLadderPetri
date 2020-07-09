@@ -1,8 +1,0 @@
-package models;
-
-public class Arc {
-	private int id;
-	private String orientation;
-	private int idTrans;
-	private int idPlace;
-}

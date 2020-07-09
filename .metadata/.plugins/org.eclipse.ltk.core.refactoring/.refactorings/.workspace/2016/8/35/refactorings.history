@@ -1,3 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">&#x0A;<refactoring comment="Delete resource &apos;ConversorLadderPetri&apos;" deleteContents="false" description="Delete resource &apos;ConversorLadderPetri&apos;" element1="/ConversorLadderPetri" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1471955114374"/>&#x0A;<refactoring comment="Delete resource &apos;RemoteSystemsTempFiles&apos;" deleteContents="false" description="Delete resource &apos;RemoteSystemsTempFiles&apos;" element1="/RemoteSystemsTempFiles" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1471955118931"/>
-</session>
